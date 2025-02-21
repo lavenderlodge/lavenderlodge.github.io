@@ -1,18 +1,24 @@
+/* 设置全局样式 */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 使用现代感字体 */
   margin: 0;
   padding: 0;
+  background-color: #e6e6fa; /* 薰衣草淡紫色背景 */
+  color: #333; /* 主要文字颜色 */
 }
 
+/* 页首样式 */
 header {
-  background-color: #333;
+  background-color: rgba(108, 108, 179, 0.8); /* 半透明的紫色，增加层次感 */
   color: white;
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影，增强立体感 */
 }
 
+/* 导航栏样式 */
 nav ul {
   list-style-type: none;
   margin: 0;
@@ -27,23 +33,54 @@ nav ul li {
 nav ul li a {
   color: white;
   text-decoration: none;
+  transition: color 0.3s ease; /* 添加过渡效果 */
 }
 
+nav ul li a:hover {
+  color: #f0f0f0; /* 鼠标悬停时的文字颜色 */
+}
+
+/* 语言切换器样式 */
 .language-switcher img {
   width: 30px;
   height: 30px;
   margin-left: 10px;
   cursor: pointer;
+  border-radius: 50%; /* 圆形图标 */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* 添加阴影 */
+  transition: transform 0.3s ease; /* 添加过渡效果 */
 }
 
+.language-switcher img:hover {
+  transform: scale(1.1); /* 鼠标悬停时放大图标 */
+}
+
+/* 主内容样式 */
 main {
   padding: 20px;
+  max-width: 1200px; /* 限制内容宽度 */
+  margin: 0 auto; /* 内容居中 */
 }
 
+/* 每个板块样式 */
 section {
   display: none;
+  background-color: white; /* 板块背景为白色 */
+  padding: 20px;
+  border-radius: 8px; /* 圆角边框 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+  margin-bottom: 20px;
 }
 
 section.active-section {
   display: block;
+}
+
+/* 页尾样式 */
+footer {
+  background-color: rgba(108, 108, 179, 0.8);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* 添加顶部阴影 */
 }
