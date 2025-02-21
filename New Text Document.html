@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>優質商舖</title>
+    <title>拉洛設計 | LALO Design</title>
     <style>
+        :root {
+            --primary-color: #967BB6; /* 薰衣草紫色 */
+            --secondary-color: #E6E6FA; /* 淺薰衣草色 */
+            --dark-purple: #4B3B65; /* 深紫色 */
+            --text-color: #333;
+            --light-text: #fff;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,7 +21,7 @@
         }
 
         nav {
-            background-color: #333;
+            background-color: var(--primary-color);
             padding: 1rem;
             position: sticky;
             top: 0;
@@ -37,6 +45,7 @@
         .nav-links {
             display: flex;
             gap: 2rem;
+            align-items: center;
         }
 
         .nav-links a {
@@ -46,11 +55,21 @@
         }
 
         .nav-links a:hover {
-            color: #ffd700;
+            color: var(--secondary-color);
+        }
+
+        .language-switch {
+            background: var(--dark-purple);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 1rem;
         }
 
         .hero {
-            background-color: #f5f5f5;
+            background-color: var(--secondary-color);
             padding: 4rem 1rem;
             text-align: center;
         }
@@ -58,12 +77,12 @@
         .hero h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #333;
+            color: var(--dark-purple);
         }
 
         .hero p {
             font-size: 1.2rem;
-            color: #666;
+            color: var(--text-color);
             max-width: 800px;
             margin: 0 auto;
         }
@@ -77,7 +96,7 @@
         .products h2 {
             text-align: center;
             margin-bottom: 2rem;
-            color: #333;
+            color: var(--dark-purple);
         }
 
         .product-grid {
@@ -87,7 +106,7 @@
         }
 
         .product-card {
-            border: 1px solid #ddd;
+            border: 1px solid var(--secondary-color);
             border-radius: 8px;
             overflow: hidden;
             transition: transform 0.3s;
@@ -100,11 +119,11 @@
         .product-image {
             width: 100%;
             height: 200px;
-            background-color: #ddd;
+            background-color: var(--secondary-color);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #666;
+            color: var(--text-color);
         }
 
         .product-info {
@@ -113,22 +132,22 @@
 
         .product-info h3 {
             margin-bottom: 0.5rem;
-            color: #333;
+            color: var(--dark-purple);
         }
 
         .product-info p {
-            color: #666;
+            color: var(--text-color);
             margin-bottom: 1rem;
         }
 
         .price {
             font-weight: bold;
-            color: #e44d26;
+            color: var(--primary-color);
             font-size: 1.2rem;
         }
 
         footer {
-            background-color: #333;
+            background-color: var(--dark-purple);
             color: white;
             padding: 2rem 1rem;
             margin-top: 4rem;
@@ -144,22 +163,31 @@
 
         .footer-section h3 {
             margin-bottom: 1rem;
+            color: var(--secondary-color);
         }
 
         .footer-section p, .footer-section a {
-            color: #ccc;
+            color: var(--light-text);
             text-decoration: none;
             margin-bottom: 0.5rem;
             display: block;
         }
 
         .footer-section a:hover {
-            color: #ffd700;
+            color: var(--secondary-color);
+        }
+
+        [lang="en"] {
+            display: none;
         }
 
         @media (max-width: 768px) {
-            .nav-links {
+            .nav-links a {
                 display: none;
+            }
+
+            .nav-links .language-switch {
+                display: block;
             }
 
             .hero h1 {
@@ -175,71 +203,110 @@
 <body>
     <nav>
         <div class="nav-content">
-            <div class="logo">優質商舖</div>
+            <div class="logo">
+                <span lang="zh-TW">拉洛設計</span>
+                <span lang="en">LALO Design</span>
+            </div>
             <div class="nav-links">
-                <a href="#home">首頁</a>
-                <a href="#products">產品</a>
-                <a href="#about">關於我們</a>
-                <a href="#contact">聯絡我們</a>
+                <a href="#home">
+                    <span lang="zh-TW">首頁</span>
+                    <span lang="en">Home</span>
+                </a>
+                <a href="#products">
+                    <span lang="zh-TW">產品</span>
+                    <span lang="en">Products</span>
+                </a>
+                <a href="#about">
+                    <span lang="zh-TW">關於我們</span>
+                    <span lang="en">About Us</span>
+                </a>
+                <a href="#contact">
+                    <span lang="zh-TW">聯絡我們</span>
+                    <span lang="en">Contact</span>
+                </a>
+                <button class="language-switch" onclick="toggleLanguage()">
+                    <span lang="zh-TW">EN</span>
+                    <span lang="en">中文</span>
+                </button>
             </div>
         </div>
     </nav>
 
     <div class="hero">
-        <h1>歡迎光臨優質商舖</h1>
-        <p>提供最優質的商品和最貼心的服務</p>
+        <h1>
+            <span lang="zh-TW">歡迎來到拉洛設計</span>
+            <span lang="en">Welcome to LALO Design</span>
+        </h1>
+        <p>
+            <span lang="zh-TW">創新設計，卓越品質</span>
+            <span lang="en">Innovative Design, Outstanding Quality</span>
+        </p>
     </div>
 
     <div class="products">
-        <h2>熱門商品</h2>
+        <h2>
+            <span lang="zh-TW">精選產品</span>
+            <span lang="en">Featured Products</span>
+        </h2>
         <div class="product-grid">
             <div class="product-card">
-                <div class="product-image">商品圖片 1</div>
+                <div class="product-image">Product Image 1</div>
                 <div class="product-info">
-                    <h3>商品名稱 1</h3>
-                    <p>商品描述內容，介紹商品特色和優點。</p>
-                    <span class="price">NT$ 1,999</span>
+                    <h3>
+                        <span lang="zh-TW">產品名稱 1</span>
+                        <span lang="en">Product Name 1</span>
+                    </h3>
+                    <p>
+                        <span lang="zh-TW">產品描述內容</span>
+                        <span lang="en">Product description</span>
+                    </p>
+                    <span class="price">HK$ 1,999</span>
                 </div>
             </div>
-            <div class="product-card">
-                <div class="product-image">商品圖片 2</div>
-                <div class="product-info">
-                    <h3>商品名稱 2</h3>
-                    <p>商品描述內容，介紹商品特色和優點。</p>
-                    <span class="price">NT$ 2,499</span>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image">商品圖片 3</div>
-                <div class="product-info">
-                    <h3>商品名稱 3</h3>
-                    <p>商品描述內容，介紹商品特色和優點。</p>
-                    <span class="price">NT$ 1,799</span>
-                </div>
-            </div>
+            <!-- More product cards can be added here -->
         </div>
     </div>
 
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>關於我們</h3>
-                <p>優質商舖致力於提供最好的商品和服務，讓每位顧客都能享受愉快的購物體驗。</p>
+                <h3>
+                    <span lang="zh-TW">關於我們</span>
+                    <span lang="en">About Us</span>
+                </h3>
+                <p>
+                    <span lang="zh-TW">拉洛設計致力於提供創新的設計解決方案</span>
+                    <span lang="en">LALO Design is committed to providing innovative design solutions</span>
+                </p>
             </div>
             <div class="footer-section">
-                <h3>聯絡資訊</h3>
-                <p>電話：(02) 1234-5678</p>
-                <p>地址：台北市中正區測試路123號</p>
-                <p>電子郵件：info@example.com</p>
-            </div>
-            <div class="footer-section">
-                <h3>快速連結</h3>
-                <a href="#home">首頁</a>
-                <a href="#products">產品</a>
-                <a href="#about">關於我們</a>
-                <a href="#contact">聯絡我們</a>
+                <h3>
+                    <span lang="zh-TW">聯絡資訊</span>
+                    <span lang="en">Contact Information</span>
+                </h3>
+                <p>
+                    <span lang="zh-TW">電話：(+852) 95899592</span>
+                    <span lang="en">Tel: (+852) 95899592</span>
+                </p>
+                <p>
+                    <span lang="zh-TW">地址：香港新界天水圍天恩路1號</span>
+                    <span lang="en">Address: 1 Tin Yan Road, Tin Shui Wai, New Territories, Hong Kong</span>
+                </p>
             </div>
         </div>
     </footer>
+
+    <script>
+        function toggleLanguage() {
+            const elements = document.querySelectorAll('[lang]');
+            elements.forEach(el => {
+                if (el.lang === 'zh-TW') {
+                    el.style.display = el.style.display === 'none' ? 'block' : 'none';
+                } else if (el.lang === 'en') {
+                    el.style.display = el.style.display === 'none' ? 'block' : 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
