@@ -1,61 +1,57 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-Hant">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>拉洛设计</title>
-    <style>
-        /* 设置全局样式 */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #E6E6FA; /* 薰衣草紫色 */
-            margin: 0;
-            padding: 0;
-        }
-
-        /* 头部样式 */
-        header {
-            background-color: #9370DB; /* 更深的紫色 */
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        /* 主要内容区域样式 */
-        main {
-            padding: 20px;
-            text-align: center;
-        }
-
-        /* 页脚样式 */
-        footer {
-            background-color: #9370DB;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>拉洛設計 LALO DESIGN</title>
 </head>
 
 <body>
-    <!-- 网站头部 -->
-    <header>
-        <h1>拉洛设计</h1>
-    </header>
+  <!-- 頁首 -->
+  <header>
+    <h1>拉洛設計 LALO DESIGN</h1>
+    <nav>
+      <ul>
+        <li><a href="#">首頁</a></li>
+        <li><a href="#">產品</a></li>
+        <li><a href="#">關於我們</a></li>
+        <li><a href="#">聯絡我們</a></li>
+      </ul>
+    </nav>
+    <div class="language-switcher">
+      <img src="cn-icon.png" alt="中文" data-lang="zh-Hant" class="active-lang">
+      <img src="en-icon.png" alt="英文" data-lang="en">
+    </div>
+  </header>
 
-    <!-- 主要内容区域 -->
-    <main>
-        <p>欢迎来到拉洛设计的世界！在这里，我们将为您带来独特的设计体验。</p>
-    </main>
+  <!-- 主內容 -->
+  <main>
+    <section id="home" class="active-section">
+      <h2 data-translate="首頁">首頁</h2>
+      <p data-translate="歡迎來到拉洛設計，我們提供創新的設計方案。">歡迎來到拉洛設計，我們提供創新的設計方案。</p>
+    </section>
+    <section id="products">
+      <h2 data-translate="產品">產品</h2>
+      <p data-translate="我們有多樣化的設計產品。">我們有多樣化的設計產品。</p>
+    </section>
+    <section id="about">
+      <h2 data-translate="關於我們">關於我們</h2>
+      <p data-translate="我們是一支充滿熱情的設計團隊。">我們是一支充滿熱情的設計團隊。</p>
+    </section>
+    <section id="contact">
+      <h2 data-translate="聯絡我們">聯絡我們</h2>
+      <p data-translate="請隨時聯繫我們以獲取更多資訊。">請隨時聯繫我們以獲取更多資訊。</p>
+    </section>
+  </main>
 
-    <!-- 网站页脚 -->
-    <footer>
-        <p>&copy; 2025 拉洛设计 保留所有权利</p>
-    </footer>
+  <!-- 頁尾 -->
+  <footer>
+    <p>&copy; 2025 拉洛設計 LALO DESIGN</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
