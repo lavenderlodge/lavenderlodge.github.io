@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>優質商舖</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft JhengHei", sans-serif;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+
+        .hero {
+            background-color: #f5f5f5;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .products {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 1rem;
+        }
+
+        .products h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+
+        .product-info {
+            padding: 1rem;
+        }
+
+        .product-info h3 {
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .product-info p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #e44d26;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: #ffd700;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <div class="logo">優質商舖</div>
+            <div class="nav-links">
+                <a href="#home">首頁</a>
+                <a href="#products">產品</a>
+                <a href="#about">關於我們</a>
+                <a href="#contact">聯絡我們</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>歡迎光臨優質商舖</h1>
+        <p>提供最優質的商品和最貼心的服務</p>
+    </div>
+
+    <div class="products">
+        <h2>熱門商品</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">商品圖片 1</div>
+                <div class="product-info">
+                    <h3>商品名稱 1</h3>
+                    <p>商品描述內容，介紹商品特色和優點。</p>
+                    <span class="price">NT$ 1,999</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">商品圖片 2</div>
+                <div class="product-info">
+                    <h3>商品名稱 2</h3>
+                    <p>商品描述內容，介紹商品特色和優點。</p>
+                    <span class="price">NT$ 2,499</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">商品圖片 3</div>
+                <div class="product-info">
+                    <h3>商品名稱 3</h3>
+                    <p>商品描述內容，介紹商品特色和優點。</p>
+                    <span class="price">NT$ 1,799</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>關於我們</h3>
+                <p>優質商舖致力於提供最好的商品和服務，讓每位顧客都能享受愉快的購物體驗。</p>
+            </div>
+            <div class="footer-section">
+                <h3>聯絡資訊</h3>
+                <p>電話：(02) 1234-5678</p>
+                <p>地址：台北市中正區測試路123號</p>
+                <p>電子郵件：info@example.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>快速連結</h3>
+                <a href="#home">首頁</a>
+                <a href="#products">產品</a>
+                <a href="#about">關於我們</a>
+                <a href="#contact">聯絡我們</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
