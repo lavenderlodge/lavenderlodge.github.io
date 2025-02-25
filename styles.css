@@ -1,86 +1,107 @@
-/* 设置全局样式 */
+/* CSS 样式 */
+:root {
+    --lavender: #9D81BA;
+    --lavender-dark: #7B6796;
+    --lavender-light: #E6E0EC;
+    --text-dark: #333333;
+    --text-light: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 使用现代感字体 */
-  margin: 0;
-  padding: 0;
-  background-color: #e6e6fa; /* 薰衣草淡紫色背景 */
-  color: #333; /* 主要文字颜色 */
+    background-color: var(--lavender-light);
+    color: var(--text-dark);
 }
 
-/* 页首样式 */
 header {
-  background-color: rgba(108, 108, 179, 0.8); /* 半透明的紫色，增加层次感 */
-  color: white;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影，增强立体感 */
+    background-color: var(--lavender);
+    padding: 1rem 5%;
 }
 
-/* 导航栏样式 */
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
-nav ul li {
-  margin-right: 20px;
+.logo img {
+    height: 50px;
 }
 
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease; /* 添加过渡效果 */
+.logo h1 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-light);
+    font-size: 1.8rem;
 }
 
-nav ul li a:hover {
-  color: #f0f0f0; /* 鼠标悬停时的文字颜色 */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
 }
 
-/* 语言切换器样式 */
-.language-switcher img {
-  width: 30px;
-  height: 30px;
-  margin-left: 10px;
-  cursor: pointer;
-  border-radius: 50%; /* 圆形图标 */
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* 添加阴影 */
-  transition: transform 0.3s ease; /* 添加过渡效果 */
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
 }
 
-.language-switcher img:hover {
-  transform: scale(1.1); /* 鼠标悬停时放大图标 */
+.dropdown {
+    position: relative;
 }
 
-/* 主内容样式 */
-main {
-  padding: 20px;
-  max-width: 1200px; /* 限制内容宽度 */
-  margin: 0 auto; /* 内容居中 */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--lavender-light);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
 }
 
-/* 每个板块样式 */
-section {
-  display: none;
-  background-color: white; /* 板块背景为白色 */
-  padding: 20px;
-  border-radius: 8px; /* 圆角边框 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
-  margin-bottom: 20px;
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
-section.active-section {
-  display: block;
+.lang-switch {
+    position: absolute;
+    top: 1rem;
+    right: 5%;
 }
 
-/* 页尾样式 */
+.lang-switch button {
+    background: none;
+    border: 1px solid var(--text-light);
+    color: var(--text-light);
+    padding: 0.3rem 0.8rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+.content-section {
+    padding: 4rem 5%;
+    min-height: 60vh;
+}
+
 footer {
-  background-color: rgba(108, 108, 179, 0.8);
-  color: white;
-  text-align: center;
-  padding: 10px;
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* 添加顶部阴影 */
+    background-color: var(--lavender-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: 2rem 5%;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+    }
+    
+    .dropdown-content {
+        position: static;
+    }
 }
