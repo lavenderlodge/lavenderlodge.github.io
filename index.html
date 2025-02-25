@@ -1,85 +1,334 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LALO DESIGN 拉洛设计</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="lalo-icon.png">
+    <title>拉洛設計 LALO DESIGN</title>
     <style>
-        /* CSS内容见下方 */
+        /* 全局樣式 */
+        body {
+            margin: 0;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            color: #444;
+            background-color: #f5f0fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #8e7cc3;
+            color: white;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header .logo span {
+            margin-left: 10px;
+        }
+
+        header nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        .lang-switch {
+            background-color: white;
+            color: #8e7cc3;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .lang-switch:hover {
+            background-color: #d9d2e9;
+        }
+
+        /* 主內容區域 */
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            font-size: 28px;
+            color: #5e478b;
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin: 10px 0;
+            color: #5e478b;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* 價目表樣式 */
+        .pricing-table {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: #444;
+        }
+
+        .pricing-table h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #5e478b;
+        }
+
+        .pricing-table ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .pricing-table ul li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        /* 頁腳樣式 */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #8e7cc3;
+            color: white;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* 隱藏內容 */
+        .hidden {
+            display: none;
+        }
+
+        /* 子選項卡樣式 */
+        .tabs {
+            display: flex;
+            gap: 10px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            background-color: #8e7cc3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .tab:hover {
+            background-color: #6b4f9b;
+        }
+
+        .tab.active {
+            background-color: #5e478b;
+            color: white;
+        }
     </style>
 </head>
 <body>
-    <!-- 语言切换按钮 -->
-    <div class="lang-switch">
-        <button onclick="changeLanguage('zh')">中文</button>
-        <button onclick="changeLanguage('en')">EN</button>
-    </div>
-
-    <!-- 导航栏 -->
+    <!-- 頁眉 -->
     <header>
+        <div class="logo">
+            <img src="https://via.placeholder.com/40" alt="Logo" />
+            <span>拉洛設計 LALO DESIGN</span>
+        </div>
         <nav>
-            <div class="logo">
-                <img src="lalo-icon.png" alt="LALO DESIGN">
-                <h1>LALO DESIGN 拉洛设计</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home" data-lang="zh">首页</a><a href="#home" data-lang="en">Home</a></li>
-                <li class="dropdown">
-                    <a href="#products" data-lang="zh">产品</a><a href="#products" data-lang="en">Products</a>
-                    <div class="dropdown-content">
-                        <a href="#poster" data-lang="zh">海报</a><a href="#poster" data-lang="en">Posters</a>
-                        <a href="#booklet" data-lang="zh">手册</a><a href="#booklet" data-lang="en">Booklets</a>
-                        <a href="#magazine" data-lang="zh">杂志</a><a href="#magazine" data-lang="en">Magazines</a>
-                        <a href="#book" data-lang="zh">图书</a><a href="#book" data-lang="en">Books</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="#about" data-lang="zh">关于我们</a><a href="#about" data-lang="en">About</a>
-                    <div class="dropdown-content">
-                        <a href="#story" data-lang="zh">品牌故事</a><a href="#story" data-lang="en">Story</a>
-                        <a href="#clients" data-lang="zh">服务客户</a><a href="#clients" data-lang="en">Clients</a>
-                    </div>
-                </li>
-                <li><a href="#contact" data-lang="zh">联络我们</a><a href="#contact" data-lang="en">Contact</a></li>
-            </ul>
+            <a href="#home" class="nav-link" data-key="home">首頁</a>
+            <a href="#products" class="nav-link" data-key="products">產品</a>
+            <a href="#about-us" class="nav-link" data-key="about">關於我們</a>
+            <a href="#contact" class="nav-link" data-key="contact">聯絡我們</a>
         </nav>
+        <button class="lang-switch" onclick="toggleLanguage()">EN</button>
     </header>
 
-    <!-- 首页内容 -->
-    <section id="home" class="content-section">
-        <!-- 内容区 -->
-    </section>
+    <!-- 主內容 -->
+    <main>
+        <!-- 首頁 -->
+        <section id="home" class="content-section">
+            <h2 data-key="designWorks">設計作品</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" alt="Design 1">
+                    <h3 data-key="work1">設計作品 1</h3>
+                    <p data-key="work1Desc">描述作品的簡要說明。</p>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x200" alt="Design 2">
+                    <h3 data-key="work2">設計作品 2</h3>
+                    <p data-key="work2Desc">描述作品的簡要說明。</p>
+                </div>
+            </div>
 
-    <!-- 页脚 -->
+            <h2 data-key="pricingReference">價格參考</h2>
+            <div class="pricing-table">
+                <h3 data-key="pricingTableTitle">價目表</h3>
+                <ul>
+                    <li data-key="posterPrice">海報設計：$500 起</li>
+                    <li data-key="brochurePrice">手冊設計：$1000 起</li>
+                    <li data-key="magazinePrice">雜誌設計：$1500 起</li>
+                    <li data-key="bookPrice">圖書設計：$2000 起</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 產品 -->
+        <section id="products" class="content-section hidden">
+            <h2 data-key="productsTitle">產品</h2>
+            <p data-key="productDesc">選擇我們的專業設計產品</p>
+        </section>
+
+        <!-- 關於我們 -->
+        <section id="about-us" class="content-section hidden">
+            <h2 data-key="aboutUsTitle">關於我們</h2>
+            <p data-key="aboutDesc">了解更多我們的設計團隊</p>
+        </section>
+
+        <!-- 聯絡我們 -->
+        <section id="contact" class="content-section hidden">
+            <h2 data-key="contactUsTitle">聯絡我們</h2>
+            <p data-key="contactPhone">電話：1234-5678</p>
+            <p data-key="contactEmail">郵箱：info@lalodesign.hk</p>
+        </section>
+    </main>
+
+    <!-- 頁腳 -->
     <footer>
-        <p>© 2025 香港逸家紫研發展有限公司<br>Hong Kong Lavender Lodge Development Company Limited</p>
+        <p>© 2025 香港逸家紫研發展有限公司 Hong Kong Lavender Lodge Development Company Limited</p>
     </footer>
 
     <script>
-        // JavaScript内容见下方
+        const translations = {
+            zh: {
+                home: "首頁",
+                products: "產品",
+                about: "關於我們",
+                contact: "聯絡我們",
+                designWorks: "設計作品",
+                work1: "設計作品 1",
+                work1Desc: "描述作品的簡要說明。",
+                work2: "設計作品 2",
+                work2Desc: "描述作品的簡要說明。",
+                pricingReference: "價格參考",
+                pricingTableTitle: "價目表",
+                posterPrice: "海報設計：$500 起",
+                brochurePrice: "手冊設計：$1000 起",
+                magazinePrice: "雜誌設計：$1500 起",
+                bookPrice: "圖書設計：$2000 起",
+                productsTitle: "產品",
+                productDesc: "選擇我們的專業設計產品",
+                aboutUsTitle: "關於我們",
+                aboutDesc: "了解更多我們的設計團隊",
+                contactUsTitle: "聯絡我們",
+                contactPhone: "電話：1234-5678",
+                contactEmail: "郵箱：info@lalodesign.hk"
+            },
+            en: {
+                home: "Home",
+                products: "Products",
+                about: "About Us",
+                contact: "Contact Us",
+                designWorks: "Design Works",
+                work1: "Design Work 1",
+                work1Desc: "A brief description of the work.",
+                work2: "Design Work 2",
+                work2Desc: "A brief description of the work.",
+                pricingReference: "Pricing Reference",
+                pricingTableTitle: "Pricing Table",
+                posterPrice: "Poster Design: Starting at $500",
+                brochurePrice: "Brochure Design: Starting at $1000",
+                magazinePrice: "Magazine Design: Starting at $1500",
+                bookPrice: "Book Design: Starting at $2000",
+                productsTitle: "Products",
+                productDesc: "Choose from our professional design products",
+                aboutUsTitle: "About Us",
+                aboutDesc: "Learn more about our design team",
+                contactUsTitle: "Contact Us",
+                contactPhone: "Phone: 1234-5678",
+                contactEmail: "Email: info@lalodesign.hk"
+            }
+        };
+
+        let currentLang = "zh";
+
+        function toggleLanguage() {
+            currentLang = currentLang === "zh" ? "en" : "zh";
+            document.querySelector(".lang-switch").textContent = currentLang === "zh" ? "EN" : "中文";
+            updateTranslations();
+        }
+
+        function updateTranslations() {
+            document.querySelectorAll("[data-key]").forEach(element => {
+                const key = element.getAttribute("data-key");
+                element.textContent = translations[currentLang][key];
+            });
+        }
+
+        updateTranslations(); // 初始化
     </script>
 </body>
-</html>
-    </section>
-    <section id="about">
-      <h2 data-translate="關於我們">關於我們</h2>
-      <p data-translate="我們是一支充滿熱情的設計團隊。">我們是一支充滿熱情的設計團隊。</p>
-    </section>
-    <section id="contact">
-      <h2 data-translate="聯絡我們">聯絡我們</h2>
-      <p data-translate="請隨時聯繫我們以獲取更多資訊。">請隨時聯繫我們以獲取更多資訊。</p>
-    </section>
-  </main>
-
-  <!-- 頁尾 -->
-  <footer>
-    <p>&copy; 2025 香港逸家紫研發展有限公司 Hong Kong Lavender Lodge Development Company Limited</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-
 </html>
