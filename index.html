@@ -1,40 +1,68 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>拉洛設計 LALO DESIGN</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LALO DESIGN 拉洛设计</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="lalo-icon.png">
+    <style>
+        /* CSS内容见下方 */
+    </style>
 </head>
-
 <body>
-  <!-- 頁首 -->
-  <header>
-    <h1>拉洛設計 LALO DESIGN</h1>
-    <nav>
-      <ul>
-        <li><a href="#">首頁</a></li>
-        <li><a href="#">產品</a></li>
-        <li><a href="#">關於我們</a></li>
-        <li><a href="#">聯絡我們</a></li>
-      </ul>
-    </nav>
-    <div class="language-switcher">
-      <img src="cn-icon.png" alt="中文" data-lang="zh-Hant" class="active-lang">
-      <img src="en-icon.png" alt="英文" data-lang="en">
+    <!-- 语言切换按钮 -->
+    <div class="lang-switch">
+        <button onclick="changeLanguage('zh')">中文</button>
+        <button onclick="changeLanguage('en')">EN</button>
     </div>
-  </header>
 
-  <!-- 主內容 -->
-  <main>
-    <section id="home" class="active-section">
-      <h2 data-translate="首頁">首頁</h2>
-      <p data-translate="歡迎來到拉洛設計，我們提供創新的設計方案。">歡迎來到拉洛設計，我們提供創新的設計方案。</p>
+    <!-- 导航栏 -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="lalo-icon.png" alt="LALO DESIGN">
+                <h1>LALO DESIGN 拉洛设计</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" data-lang="zh">首页</a><a href="#home" data-lang="en">Home</a></li>
+                <li class="dropdown">
+                    <a href="#products" data-lang="zh">产品</a><a href="#products" data-lang="en">Products</a>
+                    <div class="dropdown-content">
+                        <a href="#poster" data-lang="zh">海报</a><a href="#poster" data-lang="en">Posters</a>
+                        <a href="#booklet" data-lang="zh">手册</a><a href="#booklet" data-lang="en">Booklets</a>
+                        <a href="#magazine" data-lang="zh">杂志</a><a href="#magazine" data-lang="en">Magazines</a>
+                        <a href="#book" data-lang="zh">图书</a><a href="#book" data-lang="en">Books</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#about" data-lang="zh">关于我们</a><a href="#about" data-lang="en">About</a>
+                    <div class="dropdown-content">
+                        <a href="#story" data-lang="zh">品牌故事</a><a href="#story" data-lang="en">Story</a>
+                        <a href="#clients" data-lang="zh">服务客户</a><a href="#clients" data-lang="en">Clients</a>
+                    </div>
+                </li>
+                <li><a href="#contact" data-lang="zh">联络我们</a><a href="#contact" data-lang="en">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 首页内容 -->
+    <section id="home" class="content-section">
+        <!-- 内容区 -->
     </section>
-    <section id="products">
-      <h2 data-translate="產品">產品</h2>
-      <p data-translate="我們有多樣化的設計產品。">我們有多樣化的設計產品。</p>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>© 2025 香港逸家紫研發展有限公司<br>Hong Kong Lavender Lodge Development Company Limited</p>
+    </footer>
+
+    <script>
+        // JavaScript内容见下方
+    </script>
+</body>
+</html>
     </section>
     <section id="about">
       <h2 data-translate="關於我們">關於我們</h2>
