@@ -1,40 +1,110 @@
-// 中英文翻譯對照
-const translations = {
-  'zh-Hant': {
-    '首頁': '首頁',
-    '產品': '產品',
-    '關於我們': '關於我們',
-    '聯絡我們': '聯絡我們',
-    '歡迎來到拉洛設計，我們提供創新的設計方案。': '歡迎來到拉洛設計，我們提供創新的設計方案。',
-    '我們有多樣化的設計產品。': '我們有多樣化的設計產品。',
-    '我們是一支充滿熱情的設計團隊。': '我們是一支充滿熱情的設計團隊。',
-    '請隨時聯繫我們以獲取更多資訊。': '請隨時聯繫我們以獲取更多資訊。'
-  },
-  'en': {
-    '首頁': 'Home',
-    '產品': 'Products',
-    '關於我們': 'About Us',
-    '聯絡我們': 'Contact Us',
-    '歡迎來到拉洛設計，我們提供創新的設計方案。': 'Welcome to LALO DESIGN. We offer innovative design solutions.',
-    '我們有多樣化的設計產品。': 'We have a variety of design products.',
-    '我們是一支充滿熱情的設計團隊。': 'We are a passionate design team.',
-    '請隨時聯繫我們以獲取更多資訊。': 'Please feel free to contact us for more information.'
-  }
-};
+/* CSS 样式 */
+:root {
+    --lavender: #9D81BA;
+    --lavender-dark: #7B6796;
+    --lavender-light: #E6E0EC;
+    --text-dark: #333333;
+    --text-light: #FFFFFF;
+}
 
-// 語言切換功能
-const languageSwitcher = document.querySelector('.language-switcher');
-const allLangImages = languageSwitcher.querySelectorAll('img');
-allLangImages.forEach(img => {
-  img.addEventListener('click', function () {
-    const lang = this.dataset.lang;
-    allLangImages.forEach(img => img.classList.remove('active-lang'));
-    this.classList.add('active-lang');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
 
-    const elementsToTranslate = document.querySelectorAll('[data-translate]');
-    elementsToTranslate.forEach(element => {
-      const originalText = element.dataset.translate;
-      element.textContent = translations[lang][originalText];
+body {
+    background-color: var(--lavender-light);
+    color: var(--text-dark);
+}
+
+header {
+    background-color: var(--lavender);
+    padding: 1rem 5%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.logo h1 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-light);
+    font-size: 1.8rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--lavender-light);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.lang-switch {
+    position: absolute;
+    top: 1rem;
+    right: 5%;
+}
+
+.lang-switch button {
+    background: none;
+    border: 1px solid var(--text-light);
+    color: var(--text-light);
+    padding: 0.3rem 0.8rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+.content-section {
+    padding: 4rem 5%;
+    min-height: 60vh;
+}
+
+footer {
+    background-color: var(--lavender-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: 2rem 5%;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+    }
+    
+    .dropdown-content {
+        position: static;
+    }
+}
     });
   });
 });
