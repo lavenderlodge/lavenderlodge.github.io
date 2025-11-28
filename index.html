@@ -112,11 +112,12 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20">
                 <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center gap-3">
-                        <img class="h-12 w-auto object-contain" src="logo.jpg" alt="香港逸家紫研發展有限公司 Logo" onerror="this.onerror=null; this.src='https://placehold.co/100x100?text=Logo'; this.style.borderRadius='50%'">
-                        <div class="hidden md:block">
-                            <h1 class="text-xl font-bold text-gray-900 tracking-tight">香港逸家紫研發展有限公司</h1>
-                            <p class="text-xs text-primary font-medium tracking-wider">Hong Kong Lavender Lodge Development Copmany Limited</p>
+                    <div class="flex-shrink-0 flex items-center gap-2 md:gap-3">
+                        <img class="h-10 md:h-12 w-auto object-contain" src="logo.jpg" alt="香港逸家紫研發展有限公司 Logo" onerror="this.onerror=null; this.src='https://placehold.co/100x100?text=Logo'; this.style.borderRadius='50%'">
+                        
+                        <div class="flex flex-col justify-center">
+                            <h1 class="text-sm md:text-xl font-bold text-gray-900 tracking-tight leading-tight">香港逸家紫研發展有限公司</h1>
+                            <p class="text-[10px] md:text-xs text-primary font-medium tracking-wider transform scale-95 origin-left">Hong Kong Lavender Lodge Development Copmany Limited</p>
                         </div>
                     </div>
                 </div>
@@ -150,7 +151,7 @@
         </div>
     </nav>
 
-    <section id="home" class="relative pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+    <section id="home" class="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
         <div class="absolute inset-0 z-0">
              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Technology Background" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-r from-accent/90 to-primary/80 mix-blend-multiply"></div>
@@ -343,29 +344,29 @@
             </div>
             
             <div class="grid md:grid-cols-2 gap-12 bg-white rounded-2xl shadow-xl overflow-hidden">
-                <div class="p-10 bg-primaryDark text-white flex flex-col justify-between relative overflow-hidden">
+                <div class="p-6 md:p-10 bg-primaryDark text-white flex flex-col justify-between relative overflow-hidden">
                     <div class="relative z-10">
                         <h4 class="text-2xl font-bold mb-6">聯繫方式</h4>
                         <p class="text-purple-200 mb-8">如果您有任何疑問或合作意向，請隨時與我們聯繫。我們將盡快回覆。</p>
                         
                         <div class="space-y-6">
-                            <div class="flex items-center">
-                                <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center mr-4">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-white/10 rounded-full flex-shrink-0 flex items-center justify-center mr-4 mt-1">
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
-                                <span>香港新界天水圍天恩路1號YOHO WEST3A座25樓11室</span>
+                                <span class="leading-relaxed">香港新界天水圍天恩路1號YOHO WEST3A座25樓11室</span>
                             </div>
-                            <div class="flex items-center">
-                                <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center mr-4">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-white/10 rounded-full flex-shrink-0 flex items-center justify-center mr-4 mt-1">
                                     <i class="fas fa-phone-alt"></i>
                                 </div>
-                                <span>+852 5662 4610</span>
+                                <span class="leading-relaxed">+852 5662 4610</span>
                             </div>
-                            <div class="flex items-center">
-                                <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center mr-4">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-white/10 rounded-full flex-shrink-0 flex items-center justify-center mr-4 mt-1">
                                     <i class="fas fa-envelope"></i>
                                 </div>
-                                <span>lavenderlodgehk@outlook.com</span>
+                                <span class="leading-relaxed break-all">lavenderlodgehk@outlook.com</span>
                             </div>
                         </div>
                     </div>
@@ -373,7 +374,7 @@
                     <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-primary rounded-full opacity-50"></div>
                 </div>
                 
-                <div class="p-10">
+                <div class="p-6 md:p-10">
                     <form onsubmit="event.preventDefault(); alert('感謝您的留言！我們會盡快與您聯絡。');" class="space-y-6">
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700 mb-1">姓名</label>
