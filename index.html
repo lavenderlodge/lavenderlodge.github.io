@@ -39,47 +39,58 @@
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%237c3aed' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
 
-        /* Modal specific styles */
+        /* --- 新增：彈出視窗樣式 (Modal CSS) --- */
         .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1000; /* Sit on top */
+            display: none; /* 默認隱藏 */
+            position: fixed; 
+            z-index: 9999; 
             left: 0;
             top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
-            display: flex;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.8); /* 黑色半透明背景 */
+            backdrop-filter: blur(5px);
             align-items: center;
             justify-content: center;
         }
+        
+        /* 當添加了 flex 類時顯示 */
+        .modal.flex {
+            display: flex; 
+        }
+
         .modal-content {
             margin: auto;
             display: block;
-            width: 80%;
-            max-width: 400px; /* Adjust max width as needed */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        .modal-content img {
-            width: 100%;
+            max-width: 90%;
+            max-height: 90vh;
+            width: auto;
             height: auto;
-            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: zoomIn 0.3s ease;
         }
-        .close {
+
+        @keyframes zoomIn {
+            from {transform: scale(0.9); opacity: 0;}
+            to {transform: scale(1); opacity: 1;}
+        }
+
+        .close-btn {
             position: absolute;
-            top: 15px;
+            top: 20px;
             right: 35px;
             color: #f1f1f1;
             font-size: 40px;
             font-weight: bold;
             transition: 0.3s;
             cursor: pointer;
+            z-index: 10000;
         }
-        .close:hover,
-        .close:focus {
+
+        .close-btn:hover,
+        .close-btn:focus {
             color: #bbb;
             text-decoration: none;
             cursor: pointer;
@@ -169,7 +180,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-primary font-bold tracking-wide uppercase text-sm mb-2">關於我們</h2>
-                <h3 class="text-3xl md:text-4xl font-bold text-gray-900">專注技術與傳承</h3>
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900">專注品質，追求卓越</h3>
                 <div class="w-20 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
             </div>
             
@@ -182,22 +193,22 @@
                 
                 <div class="space-y-6">
                     <p class="text-lg text-gray-600 leading-relaxed">
-                        <strong class="text-primary text-xl">香港逸家紫研發展有限公司</strong> (Hong Kong Lavender Lodge Development Company Limited) 成立於 2025 年，是一間立足香港、由資深專家領航的技術顧問與教育機構。我們致力於將深厚的計算機工程底蘊轉化為推動商業創新的動力，同時透過高品質的數理與技術培訓，為下一代及行業專才賦能。
+                        <strong class="text-primary text-xl">香港逸家紫研發展有限公司</strong> 是一家立足香港、面向全球的綜合性發展企業。我們以「引領創新科技,賦能未來人才」為核心價值，整合行業資源，致力於為客戶創造最大的商業價值或能力提升。
                     </p>
                     <p class="text-lg text-gray-600 leading-relaxed">
-                        本公司的靈魂人物為董事長 <strong>周太川先生 (Mr. Tyriq Zhou)</strong>。周先生擁有超過 30 年的計算機領域實戰經驗，曾任北京計算機技術及應用研究所高級軟件工程師長達 34 年。作為公司唯一的執行專家，周先生親自主理每一項業務，確保客戶直接獲得來自頂尖工程師的精準服務。
+                        我們深信技術與教育是推動社會進步的雙引擎。通過前沿的技術服務，我們幫助企業解決複雜難題；通過系統的教育培訓，我們為行業輸送高素質人才。
                     </p>
                     
                     <div class="grid grid-cols-2 gap-6 mt-8">
                         <div class="bg-purple-50 p-4 rounded-xl border border-purple-100">
-                            <i class="fas fa-user-tie text-3xl text-primary mb-3"></i>
-                            <h4 class="font-bold text-gray-900">專家親自主理</h4>
-                            <p class="text-sm text-gray-600">創始人全程負責，拒絕層層轉包，確保技術方案精準落地。</p>
+                            <i class="fas fa-users text-3xl text-primary mb-3"></i>
+                            <h4 class="font-bold text-gray-900">專業人士</h4>
+                            <p class="text-sm text-gray-600">研究所前高級軟件工程師坐鎮把關</p>
                         </div>
                         <div class="bg-purple-50 p-4 rounded-xl border border-purple-100">
-                            <i class="fas fa-layer-group text-3xl text-primary mb-3"></i>
-                            <h4 class="font-bold text-gray-900">雙軌專業驅動</h4>
-                            <p class="text-sm text-gray-600">深耕底層技術服務與高階數理培訓，理論與實戰並重。</p>
+                            <i class="fas fa-handshake text-3xl text-primary mb-3"></i>
+                            <h4 class="font-bold text-gray-900">客戶至上</h4>
+                            <p class="text-sm text-gray-600">量身定制的解決方案或專屬課程</p>
                         </div>
                     </div>
                 </div>
@@ -212,29 +223,35 @@
                     <h2 class="text-primary font-bold tracking-wide uppercase text-sm mb-2">核心業務之一</h2>
                     <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">技術服務</h3>
                     <p class="text-gray-600 mb-8 text-lg">
-                        依託於資深專家的深厚積累，我們為初創公司及企業客戶提供深度技術支持，解決高難度的工程挑戰。
+                        我們提供全方位的技術服務，從系統架構評估到定制項目外包，助您在激烈的市場競爭中脫穎而出。
                     </p>
                     
-                    <ul class="space-y-6">
-                        <li class="flex items-start bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                            <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full mt-1">
-                                <i class="fas fa-comments text-lg"></i>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full mt-1">
+                                <i class="fas fa-check text-sm"></i>
                             </span>
                             <div class="ml-4">
-                                <h4 class="text-xl font-bold text-gray-900 mb-2">技術諮詢</h4>
-                                <h5 class="text-primary font-semibold mb-1">系統架構評審 與 安全審計</h5>
-                                <p class="text-gray-500">為您的技術決策提供專家級的「第二意見」。我們深入評估系統架構的合理性，進行嚴格的代碼審查與安全審計，確保系統的穩健性與安全性。</p>
+                                <h4 class="text-lg font-semibold text-gray-900">數字化轉型顧問</h4>
+                                <p class="text-gray-500">評估現有業務流程，制定高效的數字化升級路徑。</p>
                             </div>
                         </li>
-                        
-                        <li class="flex items-start bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                            <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full mt-1">
-                                <i class="fas fa-project-diagram text-lg"></i>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full mt-1">
+                                <i class="fas fa-code text-sm"></i>
                             </span>
                             <div class="ml-4">
-                                <h4 class="text-xl font-bold text-gray-900 mb-2">項目外包</h4>
-                                <h5 class="text-primary font-semibold mb-1">高端算法仿真 與 定制化開發</h5>
-                                <p class="text-gray-500">承接具備技術門檻的攻關項目。利用 MATLAB/Simulink 進行複雜建模與仿真，提供底層驅動開發及高性能算法實現。</p>
+                                <h4 class="text-lg font-semibold text-gray-900">軟件架構與開發</h4>
+                                <p class="text-gray-500">定制化軟件開發咨詢，微服務架構設計與優化。</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full mt-1">
+                                <i class="fas fa-shield-alt text-sm"></i>
+                            </span>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">信息安全評估</h4>
+                                <p class="text-gray-500">識別潛在風險，建立堅固的企業信息安全防線。</p>
                             </div>
                         </li>
                     </ul>
@@ -243,7 +260,7 @@
                     <div class="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition duration-500">
                         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Technical Consulting" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
-                            <h4 class="text-white text-2xl font-bold">從諮詢到落地，全程護航</h4>
+                            <h4 class="text-white text-2xl font-bold">精準技術，驅動增長</h4>
                         </div>
                     </div>
                 </div>
@@ -258,7 +275,7 @@
                     <div class="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition duration-500">
                         <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Education and Training" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
-                            <h4 class="text-white text-2xl font-bold">薪火相傳，賦能未來</h4>
+                            <h4 class="text-white text-2xl font-bold">培育英才，共創未來</h4>
                         </div>
                     </div>
                 </div>
@@ -266,38 +283,40 @@
                     <h2 class="text-primary font-bold tracking-wide uppercase text-sm mb-2">核心業務之二</h2>
                     <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">教育培訓</h3>
                     <p class="text-gray-600 mb-8 text-lg">
-                        我們結合學術理論與工程實踐，構建了針對學生與專業人士的兩大培訓體系，致力於培養邏輯思維與實戰能力。
+                        結合實踐與理論，我們為企業和個人提供高質量的教育培訓課程，涵蓋技術技能、管理能力等多個維度。
                     </p>
                     
-                    <div class="grid grid-cols-1 gap-6">
-                        <div class="bg-purple-50 p-6 rounded-xl border border-purple-100 shadow-sm hover:shadow-md transition">
-                            <div class="flex items-center mb-4">
-                                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary shadow-sm mr-4">
-                                    <i class="fas fa-square-root-alt text-xl"></i>
-                                </div>
-                                <h4 class="font-bold text-xl text-gray-900">數理課程</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-primary mb-4">
+                                <i class="fas fa-chalkboard-teacher text-xl"></i>
                             </div>
-                            <div class="pl-16">
-                                <p class="font-semibold text-primaryDark mb-2">中小學升學及競賽數學/物理課程</p>
-                                <p class="text-gray-600 text-sm leading-relaxed">
-                                    專為中小學生設計，不只應對校內升學考試，更針對各類數學與物理競賽進行深度輔導。我們著重培養學生的邏輯推演能力，打好堅實的理科基礎。
-                                </p>
+                            <h4 class="font-bold text-lg mb-2">企業內訓</h4>
+                            <p class="text-gray-500 text-sm">根據企業需求定制培訓計劃，提升團隊整體實力。</p>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-primary mb-4">
+                                <i class="fas fa-laptop-code text-xl"></i>
                             </div>
+                            <h4 class="font-bold text-lg mb-2">IT技能實戰</h4>
+                            <p class="text-gray-500 text-sm">最新的編程語言、大數據分析及人工智能實操課程。</p>
                         </div>
 
-                        <div class="bg-purple-50 p-6 rounded-xl border border-purple-100 shadow-sm hover:shadow-md transition">
-                            <div class="flex items-center mb-4">
-                                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary shadow-sm mr-4">
-                                    <i class="fas fa-laptop-code text-xl"></i>
-                                </div>
-                                <h4 class="font-bold text-xl text-gray-900">技術培訓</h4>
+                        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-primary mb-4">
+                                <i class="fas fa-certificate text-xl"></i>
                             </div>
-                            <div class="pl-16">
-                                <p class="font-semibold text-primaryDark mb-2">高性能編程 與 系統設計培訓</p>
-                                <p class="text-gray-600 text-sm leading-relaxed">
-                                    面向高校學生及企業技術人員。課程涵蓋「高性能 C++ 編程」、「嵌入式系統設計」及「實時操作系統 (RTOS)」原理。由資深工程師手把手教學，傳授書本外的實戰經驗。
-                                </p>
+                            <h4 class="font-bold text-lg mb-2">專業認證</h4>
+                            <p class="text-gray-500 text-sm">協助學員獲取行業權威認證，增強職業競爭力。</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-primary mb-4">
+                                <i class="fas fa-lightbulb text-xl"></i>
                             </div>
+                            <h4 class="font-bold text-lg mb-2">創新工作坊</h4>
+                            <p class="text-gray-500 text-sm">啟發式教學，培養創意思維與問題解決能力。</p>
                         </div>
                     </div>
                 </div>
@@ -411,12 +430,12 @@
                 <div>
                     <h5 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">聯絡方式</h5>
                     <div class="flex space-x-4">
-                        <a href="#" id="wechat-icon" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition">
+                        <button id="wechat-btn" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition focus:outline-none">
                             <i class="fab fa-weixin"></i>
-                        </a>
-                        <a href="#" id="whatsapp-icon" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition">
+                        </button>
+                        <button id="whatsapp-btn" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition focus:outline-none">
                             <i class="fab fa-whatsapp"></i>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -427,9 +446,9 @@
         </div>
     </footer>
 
-    <div id="imageModal" class="modal hidden">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modalImage" src="">
+    <div id="imageModal" class="modal">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" id="modalImage" src="" alt="Contact QR Code">
     </div>
 
     <script>
@@ -456,3 +475,44 @@
                 navbar.classList.add('shadow-lg');
                 navbar.classList.add('bg-white/95');
                 navbar.classList.add('backdrop-blur-sm');
+            } else {
+                navbar.classList.remove('shadow-lg');
+                navbar.classList.remove('bg-white/95');
+                navbar.classList.remove('backdrop-blur-sm');
+                navbar.classList.add('bg-white');
+            }
+        });
+
+        // --- 新增：彈出視窗邏輯 (Modal Logic) ---
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        const wechatBtn = document.getElementById("wechat-btn");
+        const whatsappBtn = document.getElementById("whatsapp-btn");
+        const closeBtn = document.getElementsByClassName("close-btn")[0];
+
+        // 點擊 WeChat 顯示 WeChat.jpg
+        wechatBtn.onclick = function() {
+            modal.style.display = "flex"; // 使用 flex 確保居中
+            modalImg.src = "WeChat.jpg"; // 確保文件名與 GitHub 上一致（區分大小寫）
+        }
+
+        // 點擊 WhatsApp 顯示 WhatsApp.jpg
+        whatsappBtn.onclick = function() {
+            modal.style.display = "flex";
+            modalImg.src = "WhatsApp.jpg"; // 確保文件名與 GitHub 上一致（區分大小寫）
+        }
+
+        // 點擊 X 關閉
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // 點擊背景關閉
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
