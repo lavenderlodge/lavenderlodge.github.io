@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>香港逸家紫研發展有限公司 | 技術服務與教育培訓專家</title>
-    <meta name="description" content="香港逸家紫研發展有限公司，由資深專家周太川先生創立，專注於高端技術諮詢與專業教育培訓，為企業與人才賦能。">
+    <meta name="description" content="香港逸家紫研發展有限公司，專注於技術服務與教育培訓，為企業提供專業的技術方案與人才培養服務。">
     
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -37,6 +37,52 @@
         .hero-pattern {
             background-color: #ffffff;
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%237c3aed' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Modal specific styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 400px; /* Adjust max width as needed */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -154,7 +200,7 @@
                             <p class="text-sm text-gray-600">深耕底層技術服務與高階數理培訓，理論與實戰並重。</p>
                         </div>
                     </div>
-                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -166,35 +212,29 @@
                     <h2 class="text-primary font-bold tracking-wide uppercase text-sm mb-2">核心業務之一</h2>
                     <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">技術服務</h3>
                     <p class="text-gray-600 mb-8 text-lg">
-                        我們提供全方位的技術服務，從系統架構評估到定制項目外包，助您在激烈的市場競爭中脫穎而出。
+                        依託於資深專家的深厚積累，我們為初創公司及企業客戶提供深度技術支持，解決高難度的工程挑戰。
                     </p>
                     
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full mt-1">
-                                <i class="fas fa-check text-sm"></i>
+                    <ul class="space-y-6">
+                        <li class="flex items-start bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                            <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full mt-1">
+                                <i class="fas fa-comments text-lg"></i>
                             </span>
                             <div class="ml-4">
-                                <h4 class="text-lg font-semibold text-gray-900">數字化轉型顧問</h4>
-                                <p class="text-gray-500">評估現有業務流程，制定高效的數字化升級路徑。</p>
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">技術諮詢</h4>
+                                <h5 class="text-primary font-semibold mb-1">系統架構評審 與 安全審計</h5>
+                                <p class="text-gray-500">為您的技術決策提供專家級的「第二意見」。我們深入評估系統架構的合理性，進行嚴格的代碼審查與安全審計，確保系統的穩健性與安全性。</p>
                             </div>
                         </li>
-                        <li class="flex items-start">
-                            <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full mt-1">
-                                <i class="fas fa-code text-sm"></i>
+                        
+                        <li class="flex items-start bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                            <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full mt-1">
+                                <i class="fas fa-project-diagram text-lg"></i>
                             </span>
                             <div class="ml-4">
-                                <h4 class="text-lg font-semibold text-gray-900">軟件架構與開發</h4>
-                                <p class="text-gray-500">定制化軟件開發咨詢，微服務架構設計與優化。</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-primary text-white rounded-full mt-1">
-                                <i class="fas fa-shield-alt text-sm"></i>
-                            </span>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-semibold text-gray-900">信息安全評估</h4>
-                                <p class="text-gray-500">識別潛在風險，建立堅固的企業信息安全防線。</p>
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">項目外包</h4>
+                                <h5 class="text-primary font-semibold mb-1">高端算法仿真 與 定制化開發</h5>
+                                <p class="text-gray-500">承接具備技術門檻的攻關項目。利用 MATLAB/Simulink 進行複雜建模與仿真，提供底層驅動開發及高性能算法實現。</p>
                             </div>
                         </li>
                     </ul>
@@ -203,7 +243,7 @@
                     <div class="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition duration-500">
                         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Technical Consulting" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
-                            <h4 class="text-white text-2xl font-bold">精準技術，驅動增長</h4>
+                            <h4 class="text-white text-2xl font-bold">從諮詢到落地，全程護航</h4>
                         </div>
                     </div>
                 </div>
@@ -218,7 +258,7 @@
                     <div class="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-105 transition duration-500">
                         <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Education and Training" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
-                            <h4 class="text-white text-2xl font-bold">培育英才，共創未來</h4>
+                            <h4 class="text-white text-2xl font-bold">薪火相傳，賦能未來</h4>
                         </div>
                     </div>
                 </div>
@@ -226,40 +266,38 @@
                     <h2 class="text-primary font-bold tracking-wide uppercase text-sm mb-2">核心業務之二</h2>
                     <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">教育培訓</h3>
                     <p class="text-gray-600 mb-8 text-lg">
-                        結合實踐與理論，我們為企業和個人提供高質量的教育培訓課程，涵蓋技術技能、管理能力等多個維度。
+                        我們結合學術理論與工程實踐，構建了針對學生與專業人士的兩大培訓體系，致力於培養邏輯思維與實戰能力。
                     </p>
                     
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-primary mb-4">
-                                <i class="fas fa-chalkboard-teacher text-xl"></i>
+                    <div class="grid grid-cols-1 gap-6">
+                        <div class="bg-purple-50 p-6 rounded-xl border border-purple-100 shadow-sm hover:shadow-md transition">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary shadow-sm mr-4">
+                                    <i class="fas fa-square-root-alt text-xl"></i>
+                                </div>
+                                <h4 class="font-bold text-xl text-gray-900">數理課程</h4>
                             </div>
-                            <h4 class="font-bold text-lg mb-2">企業內訓</h4>
-                            <p class="text-gray-500 text-sm">根據企業需求定制培訓計劃，提升團隊整體實力。</p>
-                        </div>
-                        
-                        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-primary mb-4">
-                                <i class="fas fa-laptop-code text-xl"></i>
+                            <div class="pl-16">
+                                <p class="font-semibold text-primaryDark mb-2">中小學升學及競賽數學/物理課程</p>
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    專為中小學生設計，不只應對校內升學考試，更針對各類數學與物理競賽進行深度輔導。我們著重培養學生的邏輯推演能力，打好堅實的理科基礎。
+                                </p>
                             </div>
-                            <h4 class="font-bold text-lg mb-2">IT技能實戰</h4>
-                            <p class="text-gray-500 text-sm">最新的編程語言、大數據分析及人工智能實操課程。</p>
-                        </div>
-
-                        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-primary mb-4">
-                                <i class="fas fa-certificate text-xl"></i>
-                            </div>
-                            <h4 class="font-bold text-lg mb-2">專業認證</h4>
-                            <p class="text-gray-500 text-sm">協助學員獲取行業權威認證，增強職業競爭力。</p>
                         </div>
 
-                        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-primary mb-4">
-                                <i class="fas fa-lightbulb text-xl"></i>
+                        <div class="bg-purple-50 p-6 rounded-xl border border-purple-100 shadow-sm hover:shadow-md transition">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary shadow-sm mr-4">
+                                    <i class="fas fa-laptop-code text-xl"></i>
+                                </div>
+                                <h4 class="font-bold text-xl text-gray-900">技術培訓</h4>
                             </div>
-                            <h4 class="font-bold text-lg mb-2">創新工作坊</h4>
-                            <p class="text-gray-500 text-sm">啟發式教學，培養創意思維與問題解決能力。</p>
+                            <div class="pl-16">
+                                <p class="font-semibold text-primaryDark mb-2">高性能編程 與 系統設計培訓</p>
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    面向高校學生及企業技術人員。課程涵蓋「高性能 C++ 編程」、「嵌入式系統設計」及「實時操作系統 (RTOS)」原理。由資深工程師手把手教學，傳授書本外的實戰經驗。
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -356,7 +394,7 @@
                         <h5 class="text-white text-xl font-bold">香港逸家紫研發展有限公司</h5>
                     </div>
                     <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
-                        專注於技術創新與人才培育，致力於成為大灣區領先的綜合性發展企業。我們用專業的視角，為您的企業賦能。
+                        專注於技術創新與人才培育。我們用專業的視角，為您賦能。
                     </p>
                 </div>
                 
@@ -371,16 +409,13 @@
                 </div>
                 
                 <div>
-                    <h5 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">關注我們</h5>
+                    <h5 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">聯絡方式</h5>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition">
+                        <a href="#" id="wechat-icon" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition">
                             <i class="fab fa-weixin"></i>
+                        </a>
+                        <a href="#" id="whatsapp-icon" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition">
+                            <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
                 </div>
@@ -391,6 +426,11 @@
             </div>
         </div>
     </footer>
+
+    <div id="imageModal" class="modal hidden">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage" src="">
+    </div>
 
     <script>
         // Mobile menu toggle
@@ -416,13 +456,3 @@
                 navbar.classList.add('shadow-lg');
                 navbar.classList.add('bg-white/95');
                 navbar.classList.add('backdrop-blur-sm');
-            } else {
-                navbar.classList.remove('shadow-lg');
-                navbar.classList.remove('bg-white/95');
-                navbar.classList.remove('backdrop-blur-sm');
-                navbar.classList.add('bg-white');
-            }
-        });
-    </script>
-</body>
-</html>
